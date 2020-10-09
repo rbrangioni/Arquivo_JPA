@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    <persistence-unit name="jpa">
+
+        <properties>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+            <property name="hibernate.connection.url"
+                      value="jdbc:mysql://192.168.0.30:3306/teste?useTimezone=true&amp;serverTimezone=UTC&amp;useSSL=false"/>
+            <property name="hibernate.connection.autocommit" value="false"/>
+            <property name="hibernate.connection.username" value="admin"/>
+            <property name="hibernate.connection.password" value="admin.2011"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <property name="hibernate.connection.CharSet" value="utf8"/>
+            <property name="hibernate.connection.characterEncoding" value="utf8"/>
+            <property name="hibernate.connection.useUnicode" value="true"/>
+            <property name="hibernate.show_sql" value="false"/>
+            <property name="hibernate.format_sql" value="false"/>
+            <!-- <property name="hibernate.hbm2ddl.auto" value="update"/>-->
+            <!-- use encache provider-->
+            <!--<property name="hibernate.cache.region.factory_class"-->
+            <!--value="org.hibernate.cache.ehcache.EhCacheRegionFactory"/>-->
+            <!--<property name="hibernate.javax.cache.provider" value="org.ehcache.jsr107.EhcacheCachingProvider"/>-->
+            <!--&lt;!&ndash;use second level cache&ndash;&gt;-->
+            <!--<property name="hibernate.cache.use_second_level_cache" value="true"/>-->
+            <!--&lt;!&ndash;use 3rd level cache&ndash;&gt;-->
+            <!--<property name="hibernate.cache.use_query_cache" value="true"/>-->
+        </properties>
+    </persistence-unit>
+
+    <persistence-unit name="jpa-sybase">
+
+        <properties>
+            <property name="hibernate.connection.driver_class" value="com.sybase.jdbc3.jdbc.SybDataSource"/>
+            <property name="hibernate.connection.url" value="jdbc:sybase:Tds:192.168.0.30:9195?ServiceName=campobom"/>
+            <property name="hibernate.connection.autocommit" value="false"/>
+            <property name="hibernate.connection.username" value="tecbth_raphaelb"/>
+            <property name="hibernate.connection.password" value="xxxxxxxx"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.SybaseAnywhereDialect"/>
+            <property name="hibernate.connection.CharSet" value="utf8"/>
+            <property name="hibernate.connection.characterEncoding" value="utf8"/>
+            <property name="hibernate.connection.useUnicode" value="true"/>
+            <property name="hibernate.show_sql" value="false"/>
+            <property name="hibernate.format_sql" value="false"/>
+            <!-- <property name="hibernate.hbm2ddl.auto" value="update"/>-->
+            <!-- use encache provider-->
+            <!--<property name="hibernate.cache.region.factory_class"-->
+            <!--value="org.hibernate.cache.ehcache.EhCacheRegionFactory"/>-->
+            <!--<property name="hibernate.javax.cache.provider" value="org.ehcache.jsr107.EhcacheCachingProvider"/>-->
+            <!--&lt;!&ndash;use second level cache&ndash;&gt;-->
+            <!--<property name="hibernate.cache.use_second_level_cache" value="true"/>-->
+            <!--&lt;!&ndash;use 3rd level cache&ndash;&gt;-->
+            <!--<property name="hibernate.cache.use_query_cache" value="true"/>-->
+        </properties>
+    </persistence-unit>
+
+    <persistence-unit name="jpa-pg" transaction-type="RESOURCE_LOCAL">
+
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/> <!-- DB Driver -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://192.168.0.30/teste"/> <!-- BD Mane -->
+            <property name="javax.persistence.jdbc.user" value="postgres"/> <!-- DB User -->
+            <property name="javax.persistence.jdbc.password" value="admin"/> <!-- DB Password -->
+            <property name="hibernate.connection.autocommit" value="false"/>
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/> <!-- DB Dialect -->
+            <!-- <property name="hibernate.hbm2ddl.auto" value="update"/> -->
+
+            <property name="hibernate.show_sql" value="false"/> <!-- Show SQL in console -->
+            <property name="hibernate.format_sql" value="false"/> <!-- Show SQL formatted -->
+        </properties>
+    </persistence-unit>
+
+</persistence>
