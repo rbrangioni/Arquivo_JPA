@@ -18,7 +18,7 @@ public class PessoasDAO {
 
     private EntityManager getEntityManager() {
         EntityManagerFactory factory = Persistence
-                .createEntityManagerFactory("jpa-pg");
+                .createEntityManagerFactory("jpa");
         if (entityManager == null) {
             entityManager = factory.createEntityManager();
         }

@@ -1,9 +1,7 @@
 package br.com.raphael.arquivos.entities;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.Objects;
 
@@ -23,6 +21,7 @@ public class Pessoas {
     private Date dataNascimento;
 
     @Column(name = "data_falecimento")
+    @Temporal(TemporalType.DATE)
     private Date dataFalecimento;
 
     @Column(name = "data_lavratura")
