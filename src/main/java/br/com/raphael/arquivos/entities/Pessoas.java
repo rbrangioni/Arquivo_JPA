@@ -30,10 +30,13 @@ public class Pessoas {
     @Column(name = "idade_falecimento")
     private int idadeFalecimento;
 
+    @Column(name = "estado_origem")
+    private String estadoOrigem;
+
     public Pessoas() {
     }
 
-    public Pessoas(Integer sequencial, String nome, String nomeMae, String cpf, Date dataNascimento, Date dataFalecimento, Date dataLavratura, int idadeFalecimento) {
+    public Pessoas(Integer sequencial, String nome, String nomeMae, String cpf, Date dataNascimento, Date dataFalecimento, Date dataLavratura, int idadeFalecimento, String estadoOrigem) {
         this.id = sequencial;
         this.nome = nome;
         this.nomeMae = nomeMae;
@@ -42,6 +45,8 @@ public class Pessoas {
         this.dataFalecimento = dataFalecimento;
         this.dataLavratura = dataLavratura;
         this.idadeFalecimento = idadeFalecimento;
+        this.estadoOrigem = estadoOrigem;
+
     }
 
     public Integer getId() {
@@ -106,6 +111,14 @@ public class Pessoas {
 
     public void setIdadeFalecimento(int idadeFalecimento) {
         this.idadeFalecimento = idadeFalecimento;
+    }
+
+    public String getEstadoOrigem() {
+        return estadoOrigem;
+    }
+
+    public void setEstadoOrigem(String estadoOrigem) {
+        this.estadoOrigem = estadoOrigem;
     }
 
     @Override

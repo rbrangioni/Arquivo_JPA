@@ -30,6 +30,7 @@ public class PessoasDAO {
         return entityManager.find(Pessoas.class, id);
     }
 
+
     @SuppressWarnings("unchecked")
     public List<Pessoas> findAll() {
         return entityManager.createQuery("FROM " + Pessoas.class.getName())
@@ -60,7 +61,7 @@ public class PessoasDAO {
 
     public void remove(Pessoas pessoa) {
         try {
-           // entityManager.getTransaction().begin();
+            // entityManager.getTransaction().begin();
             pessoa = entityManager.find(Pessoas.class, pessoa.getId());
             entityManager.remove(pessoa);
             //entityManager.getTransaction().commit();
